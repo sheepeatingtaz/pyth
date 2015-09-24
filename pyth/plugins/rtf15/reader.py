@@ -238,7 +238,7 @@ class DocBuilder(object):
         if self.isImage:
             self.block.content.append(
                 document.Image(self.propStack[-1].copy(),
-                               [b"".join(self.run)]))
+                               [b"".join([bytes(i, "utf-8") for i in self.run])]))
             self.isImage = False
         else:
             self.block.content.append(
