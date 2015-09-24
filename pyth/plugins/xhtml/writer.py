@@ -119,7 +119,7 @@ class XHTMLWriter(PythWriter):
                     current = newTag
                 current.attrs['style'] = "vertical-align: %s; font-size: smaller" % prop
 
-        current.content.append(u"".join(text.content))
+        current.content.append(u"".join(str(i) for i in text.content))
 
         return tag
 

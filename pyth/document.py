@@ -97,10 +97,10 @@ class Image(Paragraph):
     An image is stored in bytes. All properties of images from the rtf definition are allowed.
     """
     
-    validProperties = ('emfblip', 'pngblip', 'jpegblip', 'macpict', 'pmmetafile', 'wmetafile', 'dibitmap', 
-                       'wbitmap', 'wbmbitspixel', 'wbmplanes', 'wbmwidthbytes', 'picw', 'pich', 'picwgoal', 
-                       'pichgoal', 'picscalex', 'picscaley', 'picscaled', 'piccropt', 'piccropb', 'piccropr', 
-                       'piccropl', 'picbmp', 'picbpp', 'bin', 'blipupi', 'blipuid', 'bliptag', 'wbitmap')
+    validProperties = (b'emfblip', b'pngblip', b'jpegblip', b'macpict', b'pmmetafile', b'wmetafile', b'dibitmap',
+                       b'wbitmap', b'wbmbitspixel', b'wbmplanes', b'wbmwidthbytes', b'picw', b'pich', b'picwgoal',
+                       b'pichgoal', b'picscalex', b'picscaley', b'picscaled', b'piccropt', b'piccropb', b'piccropr',
+                       b'piccropl', b'picbmp', b'picbpp', b'bin', b'blipupi', b'blipuid', b'bliptag', b'wbitmap', 'underline')
     contentType = bytes
 
     def __repr__(self):
