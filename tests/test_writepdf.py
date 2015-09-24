@@ -9,7 +9,7 @@ import subprocess
 import tempfile
 import os
 import sys
-import BeautifulSoup
+import bs4 as BeautifulSoup
 
 from pyth.plugins.pdf.writer import PDFWriter
 from pyth.plugins.python.reader import *
