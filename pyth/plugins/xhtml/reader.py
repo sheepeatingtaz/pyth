@@ -25,7 +25,7 @@ class XHTMLReader(PythReader):
         self.link_callback = link_callback
 
     def go(self):
-        soup = BeautifulSoup.BeautifulSoup(self.source, from_encoding=self.encoding)
+        soup = BeautifulSoup.BeautifulSoup(self.source,  "html.parser", from_encoding=self.encoding)
         # Make sure the document content doesn't use multi-lines
         soup = self.format(soup)
         doc = document.Document()
@@ -55,12 +55,12 @@ class XHTMLReader(PythReader):
                 text = six.text_type(node)
                 lines = [x.strip() for x in text.splitlines()]
                 text = ' '.join(lines)
-                node.replaceWith(BeautifulSoup.BeautifulSoup(text))
-        soup = BeautifulSoup.BeautifulSoup(six.text_type(soup))
+                node.replaceWith(BeautifulSoup.BeautifulSoup(text, "html.parser"))
+        soup = BeautifulSoup.BeautifulSoup(six.text_type(soup), "html.parser")
         # replace all <br/> tag by newline character
         for node in soup.findAll('br'):
             node.replaceWith("\n")
-        soup = BeautifulSoup.BeautifulSoup(six.text_type(soup))
+        soup = BeautifulSoup.BeautifulSoup(six.text_type(soup), "html.parser")
         return soup
 
     def is_bold(self, node):
