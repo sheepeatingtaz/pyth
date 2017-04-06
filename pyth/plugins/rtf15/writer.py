@@ -8,7 +8,7 @@ from __future__ import absolute_import
 from pyth import document
 from pyth.format import PythWriter
 
-from cStringIO import StringIO
+from io import StringIO
 import six
 from six.moves import range
 
